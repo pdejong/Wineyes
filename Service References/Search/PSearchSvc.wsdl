@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="urn:schemas-csoitalia-it:psearchsvc-v10" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PSearchSvc" targetNamespace="urn:schemas-csoitalia-it:psearchsvc-v10" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:schemas-csoitalia-it:psearchsvc-v10/Imports">
+      <xsd:import schemaLocation="http://localhost:5100/PSvc/?xsd=xsd0" namespace="urn:schemas-csoitalia-it:psearchsvc-v10" />
+      <xsd:import schemaLocation="http://localhost:5100/PSvc/?xsd=xsd2" namespace="urn:schemas-csoitalia-it:phoenix-dt-v10" />
+      <xsd:import schemaLocation="http://localhost:5100/PSvc/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:5100/PSvc/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+      <xsd:import schemaLocation="http://localhost:5100/PSvc/?xsd=xsd4" namespace="http://schemas.microsoft.com/Message" />
+      <xsd:import schemaLocation="http://localhost:5100/PSvc/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Base" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPSearchSvc_FindPatients_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindPatients" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindPatients_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindPatientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindPatients_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q1:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindPatients_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q2:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_SearchPatients_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPatients" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_SearchPatients_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPatientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_SearchPatients_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q3:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_SearchPatients_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q4:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindPatient" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindPatient_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q5:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindPatient_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q6:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindStudies_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindStudies" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindStudies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindStudiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindStudies_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q7:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindStudies_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q8:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_SearchStudies_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchStudies" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_SearchStudies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchStudiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_SearchStudies_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q9:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_SearchStudies_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q10:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_SearchStudiesByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchStudiesByDate" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_SearchStudiesByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchStudiesByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_SearchStudiesByDate_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q11:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_SearchStudiesByDate_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q12:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindStudy_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindStudy" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindStudy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindStudyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindStudy_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q13:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindStudy_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q14:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindStudyByAccessionNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindStudyByAccessionNumber" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindStudyByAccessionNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindStudyByAccessionNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindStudyByAccessionNumber_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q15:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindStudyByAccessionNumber_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q16:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindImages_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindImages" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindImages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindImagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindImages_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q17="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q17:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindImages_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q18="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q18:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetThumbnail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThumbnail" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetThumbnail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThumbnailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetThumb_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThumb" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetThumb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThumbResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindRefractions_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRefractions" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindRefractions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRefractionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindRefractions_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q19="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q19:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindRefractions_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q20="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q20:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_SearchReports_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchReports" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_SearchReports_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_SearchReports_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q21="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q21:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_SearchReports_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q22="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q22:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindSimK_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindSimK" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindSimK_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindSimKResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindSimK_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q23="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q23:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_FindSimK_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q24="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q24:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetSimK_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSimK" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetSimK_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSimKResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetSimK_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q25="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q25:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetSimK_InvalidDeviceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q26="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q26:InvalidDeviceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetSimK_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q27="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q27:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetAngle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAngle" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetAngle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAngleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetAngle_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q28="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q28:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetAngle_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q29="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q29:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetAngle_InvalidDeviceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q30="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q30:InvalidDeviceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetBCS_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBCS" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetBCS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBCSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetBCS_InvalidDeviceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q31="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q31:InvalidDeviceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetBCS_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q32="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q32:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetBCS_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q33="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q33:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetFileref_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileref" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetFileref_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilerefResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetFileref_InvalidDeviceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q34="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q34:InvalidDeviceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetFileref_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q35="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q35:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetFileref_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q36="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q36:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetPeripheralDegrees_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeripheralDegrees" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetPeripheralDegrees_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeripheralDegreesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetPeripheralDegrees_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q37="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q37:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetPeripheralDegrees_InvalidDeviceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q38="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q38:InvalidDeviceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetPeripheralDegrees_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q39="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q39:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImage" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetImage_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q40="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q40:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetImage_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q41="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q41:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetDerived_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDerived" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetDerived_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDerivedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetDerived_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q42="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q42:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetDerived_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q43="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q43:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReport" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetReport_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q44="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q44:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IPSearchSvc_GetReport_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q45="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q45:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:portType name="IPSearchSvc">
+    <wsdl:operation name="FindPatients">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindPatients" message="tns:IPSearchSvc_FindPatients_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindPatientsResponse" message="tns:IPSearchSvc_FindPatients_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindPatientsInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_FindPatients_InvalidParameterExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindPatientsUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_FindPatients_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPatients">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchPatients" message="tns:IPSearchSvc_SearchPatients_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchPatientsResponse" message="tns:IPSearchSvc_SearchPatients_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchPatientsInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_SearchPatients_InvalidParameterExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchPatientsUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_SearchPatients_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindPatient">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindPatient" message="tns:IPSearchSvc_FindPatient_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindPatientResponse" message="tns:IPSearchSvc_FindPatient_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindPatientUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_FindPatient_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindPatientInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_FindPatient_InvalidParameterExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindStudies">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindStudies" message="tns:IPSearchSvc_FindStudies_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindStudiesResponse" message="tns:IPSearchSvc_FindStudies_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindStudiesUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_FindStudies_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindStudiesInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_FindStudies_InvalidParameterExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchStudies">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchStudies" message="tns:IPSearchSvc_SearchStudies_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchStudiesResponse" message="tns:IPSearchSvc_SearchStudies_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchStudiesUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_SearchStudies_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchStudiesInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_SearchStudies_InvalidParameterExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchStudiesByDate">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchStudiesByDate" message="tns:IPSearchSvc_SearchStudiesByDate_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchStudiesByDateResponse" message="tns:IPSearchSvc_SearchStudiesByDate_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchStudiesByDateInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_SearchStudiesByDate_InvalidParameterExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchStudiesByDateUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_SearchStudiesByDate_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindStudy">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindStudy" message="tns:IPSearchSvc_FindStudy_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindStudyResponse" message="tns:IPSearchSvc_FindStudy_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindStudyInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_FindStudy_InvalidParameterExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindStudyUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_FindStudy_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindStudyByAccessionNumber">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindStudyByAccessionNumber" message="tns:IPSearchSvc_FindStudyByAccessionNumber_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindStudyByAccessionNumberResponse" message="tns:IPSearchSvc_FindStudyByAccessionNumber_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindStudyByAccessionNumberUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_FindStudyByAccessionNumber_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindStudyByAccessionNumberInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_FindStudyByAccessionNumber_InvalidParameterExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindImages">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindImages" message="tns:IPSearchSvc_FindImages_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindImagesResponse" message="tns:IPSearchSvc_FindImages_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindImagesUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_FindImages_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindImagesInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_FindImages_InvalidParameterExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThumbnail">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetThumbnail" message="tns:IPSearchSvc_GetThumbnail_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetThumbnailResponse" message="tns:IPSearchSvc_GetThumbnail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThumb">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetThumb" message="tns:IPSearchSvc_GetThumb_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetThumbResponse" message="tns:IPSearchSvc_GetThumb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRefractions">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindRefractions" message="tns:IPSearchSvc_FindRefractions_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindRefractionsResponse" message="tns:IPSearchSvc_FindRefractions_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindRefractionsInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_FindRefractions_InvalidParameterExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindRefractionsUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_FindRefractions_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchReports">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchReports" message="tns:IPSearchSvc_SearchReports_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchReportsResponse" message="tns:IPSearchSvc_SearchReports_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchReportsInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_SearchReports_InvalidParameterExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchReportsUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_SearchReports_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindSimK">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindSimK" message="tns:IPSearchSvc_FindSimK_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindSimKResponse" message="tns:IPSearchSvc_FindSimK_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindSimKUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_FindSimK_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindSimKInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_FindSimK_InvalidParameterExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSimK">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetSimK" message="tns:IPSearchSvc_GetSimK_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetSimKResponse" message="tns:IPSearchSvc_GetSimK_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetSimKUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_GetSimK_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetSimKInvalidDeviceExceptionFault" name="InvalidDeviceExceptionFault" message="tns:IPSearchSvc_GetSimK_InvalidDeviceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetSimKInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_GetSimK_InvalidParameterExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAngle">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetAngle" message="tns:IPSearchSvc_GetAngle_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetAngleResponse" message="tns:IPSearchSvc_GetAngle_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetAngleUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_GetAngle_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetAngleInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_GetAngle_InvalidParameterExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetAngleInvalidDeviceExceptionFault" name="InvalidDeviceExceptionFault" message="tns:IPSearchSvc_GetAngle_InvalidDeviceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBCS">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetBCS" message="tns:IPSearchSvc_GetBCS_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetBCSResponse" message="tns:IPSearchSvc_GetBCS_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetBCSInvalidDeviceExceptionFault" name="InvalidDeviceExceptionFault" message="tns:IPSearchSvc_GetBCS_InvalidDeviceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetBCSInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_GetBCS_InvalidParameterExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetBCSUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_GetBCS_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileref">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetFileref" message="tns:IPSearchSvc_GetFileref_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetFilerefResponse" message="tns:IPSearchSvc_GetFileref_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetFilerefInvalidDeviceExceptionFault" name="InvalidDeviceExceptionFault" message="tns:IPSearchSvc_GetFileref_InvalidDeviceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetFilerefInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_GetFileref_InvalidParameterExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetFilerefUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_GetFileref_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPeripheralDegrees">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetPeripheralDegrees" message="tns:IPSearchSvc_GetPeripheralDegrees_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetPeripheralDegreesResponse" message="tns:IPSearchSvc_GetPeripheralDegrees_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetPeripheralDegreesInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_GetPeripheralDegrees_InvalidParameterExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetPeripheralDegreesInvalidDeviceExceptionFault" name="InvalidDeviceExceptionFault" message="tns:IPSearchSvc_GetPeripheralDegrees_InvalidDeviceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetPeripheralDegreesUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_GetPeripheralDegrees_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImage">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetImage" message="tns:IPSearchSvc_GetImage_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetImageResponse" message="tns:IPSearchSvc_GetImage_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetImageUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_GetImage_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetImageInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_GetImage_InvalidParameterExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDerived">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetDerived" message="tns:IPSearchSvc_GetDerived_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetDerivedResponse" message="tns:IPSearchSvc_GetDerived_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetDerivedInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_GetDerived_InvalidParameterExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetDerivedUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_GetDerived_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReport">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetReport" message="tns:IPSearchSvc_GetReport_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetReportResponse" message="tns:IPSearchSvc_GetReport_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetReportInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IPSearchSvc_GetReport_InvalidParameterExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetReportUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IPSearchSvc_GetReport_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="http" type="tns:IPSearchSvc">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FindPatients">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindPatients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPatients">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchPatients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindPatient">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindStudies">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindStudies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchStudies">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchStudies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchStudiesByDate">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchStudiesByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindStudy">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindStudy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindStudyByAccessionNumber">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindStudyByAccessionNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindImages">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindImages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetThumbnail">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetThumbnail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThumb">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetThumb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRefractions">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindRefractions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchReports">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/SearchReports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindSimK">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/FindSimK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSimK">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetSimK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDeviceExceptionFault">
+        <soap:fault use="literal" name="InvalidDeviceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAngle">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetAngle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDeviceExceptionFault">
+        <soap:fault use="literal" name="InvalidDeviceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBCS">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetBCS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidDeviceExceptionFault">
+        <soap:fault use="literal" name="InvalidDeviceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileref">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetFileref" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidDeviceExceptionFault">
+        <soap:fault use="literal" name="InvalidDeviceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeripheralDegrees">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetPeripheralDegrees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidDeviceExceptionFault">
+        <soap:fault use="literal" name="InvalidDeviceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetImage">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDerived">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetDerived" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetReport">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:psearchsvc-v10/IPSearchSvc/GetReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PSearchSvc">
+    <wsdl:port name="http" binding="tns:http">
+      <soap:address location="http://localhost:5100/PSvc/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

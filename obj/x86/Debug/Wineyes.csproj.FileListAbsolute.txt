@@ -1,0 +1,18 @@
+c:\users\pdejong\documents\visual studio 2010\Projects\Wineyes\bin\Debug\Wineyes.exe.config
+c:\users\pdejong\documents\visual studio 2010\Projects\Wineyes\bin\Debug\Wineyes.exe
+c:\users\pdejong\documents\visual studio 2010\Projects\Wineyes\bin\Debug\Wineyes.pdb
+c:\users\pdejong\documents\visual studio 2010\Projects\Wineyes\obj\x86\Debug\Wineyes.Form1.resources
+c:\users\pdejong\documents\visual studio 2010\Projects\Wineyes\obj\x86\Debug\Wineyes.Properties.Resources.resources
+c:\users\pdejong\documents\visual studio 2010\Projects\Wineyes\obj\x86\Debug\Wineyes.csproj.GenerateResource.Cache
+c:\users\pdejong\documents\visual studio 2010\Projects\Wineyes\obj\x86\Debug\Wineyes.exe
+c:\users\pdejong\documents\visual studio 2010\Projects\Wineyes\obj\x86\Debug\Wineyes.pdb
+C:\development\Tools\WCF\Wineyes\bin\Debug\Wineyes.exe.config
+C:\development\Tools\WCF\Wineyes\obj\x86\Debug\Wineyes.exe
+C:\development\Tools\WCF\Wineyes\obj\x86\Debug\Wineyes.pdb
+C:\development\Tools\WCF\Wineyes\bin\Debug\Wineyes.exe
+C:\development\Tools\WCF\Wineyes\bin\Debug\Wineyes.pdb
+C:\development\Tools\WCF\Wineyes\obj\x86\Debug\Wineyes.Form1.resources
+C:\development\Tools\WCF\Wineyes\obj\x86\Debug\Wineyes.Form2.resources
+C:\development\Tools\WCF\Wineyes\obj\x86\Debug\Wineyes.Properties.Resources.resources
+C:\development\Tools\WCF\Wineyes\obj\x86\Debug\Wineyes.csproj.GenerateResource.Cache
+C:\development\Tools\WCF\Wineyes\obj\x86\Debug\Wineyes.csprojResolveAssemblyReference.cache

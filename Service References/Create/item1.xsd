@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:schemas-csoitalia-it:phoenix-dt-v10" elementFormDefault="qualified" targetNamespace="urn:schemas-csoitalia-it:phoenix-dt-v10" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="UnconfiguredWebServiceException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnconfiguredWebServiceException" nillable="true" type="tns:UnconfiguredWebServiceException" />
+  <xs:complexType name="InvalidParameterException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Parameter" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvalidParameterException" nillable="true" type="tns:InvalidParameterException" />
+  <xs:complexType name="PatientExistsException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExistingPatients" nillable="true" type="tns:ArrayOfPatient" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientExistsException" nillable="true" type="tns:PatientExistsException" />
+  <xs:complexType name="ArrayOfPatient">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Patient" nillable="true" type="tns:Patient" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatient" nillable="true" type="tns:ArrayOfPatient" />
+  <xs:complexType name="Patient">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Auditable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PatientId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientsBirthDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PatientsSex" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientBirthDateString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Total" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Patient" nillable="true" type="tns:Patient" />
+  <xs:complexType name="Auditable">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="Auditable" nillable="true" type="tns:Auditable" />
+  <xs:complexType name="PatientNotFoundException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PatientId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientNotFoundException" nillable="true" type="tns:PatientNotFoundException" />
+  <xs:complexType name="NoStudyFoundException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PatientId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NoStudyFoundException" nillable="true" type="tns:NoStudyFoundException" />
+  <xs:complexType name="RefractionException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RefractionException" nillable="true" type="tns:RefractionException" />
+  <xs:complexType name="PdfException">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="PdfException" nillable="true" type="tns:PdfException" />
+  <xs:complexType name="StudyNotFoundException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StudyId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StudyNotFoundException" nillable="true" type="tns:StudyNotFoundException" />
+</xs:schema>

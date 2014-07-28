@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:schemas-csoitalia-it:phoenix-dt-v10" elementFormDefault="qualified" targetNamespace="urn:schemas-csoitalia-it:phoenix-dt-v10" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:5100/PSvc/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Base" />
+  <xs:complexType name="ArrayOfPatient">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Patient" nillable="true" type="tns:Patient" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatient" nillable="true" type="tns:ArrayOfPatient" />
+  <xs:complexType name="Patient">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Auditable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PatientId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientsBirthDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PatientsSex" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientBirthDateString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Total" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Patient" nillable="true" type="tns:Patient" />
+  <xs:complexType name="Auditable">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="Auditable" nillable="true" type="tns:Auditable" />
+  <xs:complexType name="InvalidParameterException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Parameter" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvalidParameterException" nillable="true" type="tns:InvalidParameterException" />
+  <xs:complexType name="UnconfiguredWebServiceException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnconfiguredWebServiceException" nillable="true" type="tns:UnconfiguredWebServiceException" />
+  <xs:complexType name="ArrayOfStudy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Study" nillable="true" type="tns:Study" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStudy" nillable="true" type="tns:ArrayOfStudy" />
+  <xs:complexType name="Study">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Auditable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Device" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StudyDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PatientId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StudyId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AccessionNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientsAge" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StudyDateString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StudyTimeString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientsFirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientsLastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientsBirthDateString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientsSex" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientsBirthDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Study" nillable="true" type="tns:Study" />
+  <xs:complexType name="ArrayOfImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Image" nillable="true" type="tns:Image" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImage" nillable="true" type="tns:ArrayOfImage" />
+  <xs:complexType name="Image">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Auditable">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Laterality" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Root" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Thumbnail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImageId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Movie" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ImageDateString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImageTimeString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientsFirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientsLastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientsBirthDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientsSex" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PatientId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StudyId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AccessionNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StudyDateString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StudyTimeString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StudyDateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SeriesNumber" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="InstanceNumber" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Image" nillable="true" type="tns:Image" />
+  <xs:complexType name="ArrayOfRefraction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Refraction" nillable="true" type="tns:Refraction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRefraction" nillable="true" type="tns:ArrayOfRefraction" />
+  <xs:complexType name="Refraction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SphericalLensPower" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="CylinderLensPower" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="CylinderAxis" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CornealVertexDistance" nillable="true" type="xs:float" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Base" minOccurs="0" name="Laterality" type="q1:Laterality" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Refraction" nillable="true" type="tns:Refraction" />
+  <xs:complexType name="ArrayOfReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Report" nillable="true" type="tns:Report" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReport" nillable="true" type="tns:ArrayOfReport" />
+  <xs:complexType name="Report">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Root" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Thumbnail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportDateString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportTimeString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StudyId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Report" nillable="true" type="tns:Report" />
+  <xs:complexType name="ArrayOfMeridian">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Meridian" nillable="true" type="tns:Meridian" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMeridian" nillable="true" type="tns:ArrayOfMeridian" />
+  <xs:complexType name="Meridian">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="K1Valmm" type="xs:float" />
+      <xs:element minOccurs="0" name="K1Ax" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="K2Valmm" type="xs:float" />
+      <xs:element minOccurs="0" name="K2Ax" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="K1ValD" type="xs:float" />
+      <xs:element minOccurs="0" name="K2ValD" type="xs:float" />
+      <xs:element minOccurs="0" name="AvgVal" type="xs:float" />
+      <xs:element minOccurs="0" name="CylAx" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="DateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Meridian" nillable="true" type="tns:Meridian" />
+  <xs:complexType name="InvalidDeviceException">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="InvalidDeviceException" nillable="true" type="tns:InvalidDeviceException" />
+  <xs:complexType name="PeripheralDegreesModule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Asphericitymm" nillable="true" type="tns:ArrayOfPeripheralDegree" />
+      <xs:element minOccurs="0" name="Asphericitydegrees" nillable="true" type="tns:ArrayOfPeripheralDegree" />
+      <xs:element minOccurs="0" name="SagittalRadiusmm" nillable="true" type="tns:ArrayOfPeripheralDegree" />
+      <xs:element minOccurs="0" name="SagittalRadiusdegrees" nillable="true" type="tns:ArrayOfPeripheralDegree" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PeripheralDegreesModule" nillable="true" type="tns:PeripheralDegreesModule" />
+  <xs:complexType name="ArrayOfPeripheralDegree">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PeripheralDegree" nillable="true" type="tns:PeripheralDegree" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPeripheralDegree" nillable="true" type="tns:ArrayOfPeripheralDegree" />
+  <xs:complexType name="PeripheralDegree">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SagittalAngle" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PeripheralRing" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Nasal" type="xs:float" />
+      <xs:element minOccurs="0" name="Temporal" type="xs:float" />
+      <xs:element minOccurs="0" name="Inferior" type="xs:float" />
+      <xs:element minOccurs="0" name="Superior" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PeripheralDegree" nillable="true" type="tns:PeripheralDegree" />
+</xs:schema>

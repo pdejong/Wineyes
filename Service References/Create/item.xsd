@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:schemas-csoitalia-it:pcreatesvc-v10" elementFormDefault="qualified" targetNamespace="urn:schemas-csoitalia-it:pcreatesvc-v10" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:5110/PSvc/?xsd=xsd3" namespace="http://schemas.microsoft.com/Message" />
+  <xs:element name="CreatePatient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdIssuer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PatientId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BirthDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePatientResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ScheduleProcedure">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PatientId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="StudyDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="AccessionNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ReferringPhysician" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ScheduleProcedureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ScheduleProcedureResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRefraction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PatientId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SphOD" type="xs:float" />
+        <xs:element minOccurs="0" name="CylOD" type="xs:float" />
+        <xs:element minOccurs="0" name="AxOD" type="xs:int" />
+        <xs:element minOccurs="0" name="UcVAOD" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BCVAOD" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SphOS" type="xs:float" />
+        <xs:element minOccurs="0" name="CylOS" type="xs:float" />
+        <xs:element minOccurs="0" name="AxOS" type="xs:int" />
+        <xs:element minOccurs="0" name="UcVAOS" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BCVAOS" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CVDOD" type="xs:float" />
+        <xs:element minOccurs="0" name="CVDOS" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRefractionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element xmlns:q1="http://schemas.microsoft.com/Message" name="Pdf" type="q1:StreamBody" />
+  <xs:element name="StudyId" nillable="true" type="xs:string" />
+  <xs:element name="Title" nillable="true" type="xs:string" />
+</xs:schema>

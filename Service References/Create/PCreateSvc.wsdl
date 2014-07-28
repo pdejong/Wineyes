@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="urn:schemas-csoitalia-it:pcreatesvc-v10" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PCreateSvc" targetNamespace="urn:schemas-csoitalia-it:pcreatesvc-v10" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:schemas-csoitalia-it:pcreatesvc-v10/Imports">
+      <xsd:import schemaLocation="http://localhost:5110/PSvc/?xsd=xsd0" namespace="urn:schemas-csoitalia-it:pcreatesvc-v10" />
+      <xsd:import schemaLocation="http://localhost:5110/PSvc/?xsd=xsd2" namespace="urn:schemas-csoitalia-it:phoenix-dt-v10" />
+      <xsd:import schemaLocation="http://localhost:5110/PSvc/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:5110/PSvc/?xsd=xsd3" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHttpCreate_CreatePatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePatient" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_CreatePatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_CreatePatient_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q1:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_CreatePatient_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q2:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_CreatePatient_PatientExistsExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q3:PatientExistsException" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_ScheduleProcedure_InputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleProcedure" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_ScheduleProcedure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleProcedureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_ScheduleProcedure_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q4:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_ScheduleProcedure_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q5:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_ScheduleProcedure_PatientNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q6:PatientNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_AddRefraction_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRefraction" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_AddRefraction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRefractionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_AddRefraction_NoStudyFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q7:NoStudyFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_AddRefraction_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q8:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_AddRefraction_PatientNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q9:PatientNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_AddRefraction_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q10:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_AddRefraction_RefractionExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q11:RefractionException" />
+  </wsdl:message>
+  <wsdl:message name="ReportMessage">
+    <wsdl:part name="Pdf" element="tns:Pdf" />
+  </wsdl:message>
+  <wsdl:message name="ReportMessage_Headers">
+    <wsdl:part name="StudyId" element="tns:StudyId" />
+    <wsdl:part name="Title" element="tns:Title" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_AddReport_OutputMessage" />
+  <wsdl:message name="IHttpCreate_AddReport_PdfExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q12:PdfException" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_AddReport_InvalidParameterExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q13:InvalidParameterException" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_AddReport_UnconfiguredWebServiceExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q14:UnconfiguredWebServiceException" />
+  </wsdl:message>
+  <wsdl:message name="IHttpCreate_AddReport_StudyNotFoundExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="urn:schemas-csoitalia-it:phoenix-dt-v10" name="detail" element="q15:StudyNotFoundException" />
+  </wsdl:message>
+  <wsdl:portType name="IHttpCreate">
+    <wsdl:operation name="CreatePatient">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/CreatePatient" message="tns:IHttpCreate_CreatePatient_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/CreatePatientResponse" message="tns:IHttpCreate_CreatePatient_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/CreatePatientUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IHttpCreate_CreatePatient_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/CreatePatientInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IHttpCreate_CreatePatient_InvalidParameterExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/CreatePatientPatientExistsExceptionFault" name="PatientExistsExceptionFault" message="tns:IHttpCreate_CreatePatient_PatientExistsExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleProcedure">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/ScheduleProcedure" message="tns:IHttpCreate_ScheduleProcedure_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/ScheduleProcedureResponse" message="tns:IHttpCreate_ScheduleProcedure_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/ScheduleProcedureInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IHttpCreate_ScheduleProcedure_InvalidParameterExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/ScheduleProcedureUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IHttpCreate_ScheduleProcedure_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/ScheduleProcedurePatientNotFoundExceptionFault" name="PatientNotFoundExceptionFault" message="tns:IHttpCreate_ScheduleProcedure_PatientNotFoundExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRefraction">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/AddRefraction" message="tns:IHttpCreate_AddRefraction_InputMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/AddRefractionResponse" message="tns:IHttpCreate_AddRefraction_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/AddRefractionNoStudyFoundExceptionFault" name="NoStudyFoundExceptionFault" message="tns:IHttpCreate_AddRefraction_NoStudyFoundExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/AddRefractionUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IHttpCreate_AddRefraction_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/AddRefractionPatientNotFoundExceptionFault" name="PatientNotFoundExceptionFault" message="tns:IHttpCreate_AddRefraction_PatientNotFoundExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/AddRefractionInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IHttpCreate_AddRefraction_InvalidParameterExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/AddRefractionRefractionExceptionFault" name="RefractionExceptionFault" message="tns:IHttpCreate_AddRefraction_RefractionExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddReport">
+      <wsdl:input wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IHttpCreate/AddReport" name="ReportMessage" message="tns:ReportMessage" />
+      <wsdl:output wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IHttpCreate/AddReportResponse" message="tns:IHttpCreate_AddReport_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IHttpCreate/AddReportPdfExceptionFault" name="PdfExceptionFault" message="tns:IHttpCreate_AddReport_PdfExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IHttpCreate/AddReportInvalidParameterExceptionFault" name="InvalidParameterExceptionFault" message="tns:IHttpCreate_AddReport_InvalidParameterExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IHttpCreate/AddReportUnconfiguredWebServiceExceptionFault" name="UnconfiguredWebServiceExceptionFault" message="tns:IHttpCreate_AddReport_UnconfiguredWebServiceExceptionFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="urn:schemas-csoitalia-it:pcreatesvc-v10/IHttpCreate/AddReportStudyNotFoundExceptionFault" name="StudyNotFoundExceptionFault" message="tns:IHttpCreate_AddReport_StudyNotFoundExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="http" type="tns:IHttpCreate">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreatePatient">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/CreatePatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="PatientExistsExceptionFault">
+        <soap:fault use="literal" name="PatientExistsExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleProcedure">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/ScheduleProcedure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="PatientNotFoundExceptionFault">
+        <soap:fault use="literal" name="PatientNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddRefraction">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:pcreatesvc-v10/IPCreateSvc/AddRefraction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="NoStudyFoundExceptionFault">
+        <soap:fault use="literal" name="NoStudyFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="PatientNotFoundExceptionFault">
+        <soap:fault use="literal" name="PatientNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="RefractionExceptionFault">
+        <soap:fault use="literal" name="RefractionExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddReport">
+      <soap:operation soapAction="urn:schemas-csoitalia-it:pcreatesvc-v10/IHttpCreate/AddReport" style="document" />
+      <wsdl:input name="ReportMessage">
+        <soap:header message="tns:ReportMessage_Headers" part="StudyId" use="literal" />
+        <soap:header message="tns:ReportMessage_Headers" part="Title" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PdfExceptionFault">
+        <soap:fault use="literal" name="PdfExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidParameterExceptionFault">
+        <soap:fault use="literal" name="InvalidParameterExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="UnconfiguredWebServiceExceptionFault">
+        <soap:fault use="literal" name="UnconfiguredWebServiceExceptionFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="StudyNotFoundExceptionFault">
+        <soap:fault use="literal" name="StudyNotFoundExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PCreateSvc">
+    <wsdl:port name="http" binding="tns:http">
+      <soap:address location="http://localhost:5110/PSvc/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

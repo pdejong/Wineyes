@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:schemas-csoitalia-it:psearchsvc-v10" elementFormDefault="qualified" targetNamespace="urn:schemas-csoitalia-it:psearchsvc-v10" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:5100/PSvc/?xsd=xsd2" namespace="urn:schemas-csoitalia-it:phoenix-dt-v10" />
+  <xs:import schemaLocation="http://localhost:5100/PSvc/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+  <xs:import schemaLocation="http://localhost:5100/PSvc/?xsd=xsd4" namespace="http://schemas.microsoft.com/Message" />
+  <xs:element name="FindPatients">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Maximum" type="xs:int" />
+        <xs:element minOccurs="0" name="Page" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindPatientsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="urn:schemas-csoitalia-it:phoenix-dt-v10" minOccurs="0" name="FindPatientsResult" nillable="true" type="q1:ArrayOfPatient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPatients">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPatientsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="urn:schemas-csoitalia-it:phoenix-dt-v10" minOccurs="0" name="SearchPatientsResult" nillable="true" type="q2:ArrayOfPatient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindPatient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PatientId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IdIssuer" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindPatientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="urn:schemas-csoitalia-it:phoenix-dt-v10" minOccurs="0" name="FindPatientResult" nillable="true" type="q3:Patient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindStudies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PatientId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindStudiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="urn:schemas-csoitalia-it:phoenix-dt-v10" minOccurs="0" name="FindStudiesResult" nillable="true" type="q4:ArrayOfStudy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchStudies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Maximum" type="xs:int" />
+        <xs:element minOccurs="0" name="Page" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchStudiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="urn:schemas-csoitalia-it:phoenix-dt-v10" minOccurs="0" name="SearchStudiesResult" nillable="true" type="q5:ArrayOfStudy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchStudiesByDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="From" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="To" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Device" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchStudiesByDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="urn:schemas-csoitalia-it:phoenix-dt-v10" minOccurs="0" name="SearchStudiesByDateResult" nillable="true" type="q6:ArrayOfStudy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindStudy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StudyId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindStudyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="urn:schemas-csoitalia-it:phoenix-dt-v10" minOccurs="0" name="FindStudyResult" nillable="true" type="q7:Study" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindStudyByAccessionNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccessionNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindStudyByAccessionNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="urn:schemas-csoitalia-it:phoenix-dt-v10" minOccurs="0" name="FindStudyByAccessionNumberResult" nillable="true" type="q8:Study" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindImages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StudyId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Laterality" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindImagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="urn:schemas-csoitalia-it:phoenix-dt-v10" minOccurs="0" name="FindImagesResult" nillable="true" type="q9:ArrayOfImage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetThumbnail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Root" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetThumbnailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="GetThumbnailResult" nillable="true" type="q10:Bitmap" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetThumb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ImageId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetThumbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/Message" name="GetThumbResult" type="q11:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRefractions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StudyId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Laterality" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRefractionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="urn:schemas-csoitalia-it:phoenix-dt-v10" minOccurs="0" name="FindRefractionsResult" nillable="true" type="q12:ArrayOfRefraction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchReports">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StudyId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchReportsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="urn:schemas-csoitalia-it:phoenix-dt-v10" minOccurs="0" name="SearchReportsResult" nillable="true" type="q13:ArrayOfReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindSimK">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StudyId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindSimKResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="urn:schemas-csoitalia-it:phoenix-dt-v10" minOccurs="0" name="FindSimKResult" nillable="true" type="q14:ArrayOfMeridian" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSimK">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ImageId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSimKResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="urn:schemas-csoitalia-it:phoenix-dt-v10" minOccurs="0" name="GetSimKResult" nillable="true" type="q15:Meridian" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAngle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ImageId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAngleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAngleResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBCS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ImageId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBCSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.microsoft.com/Message" name="GetBCSResult" type="q16:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileref">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ImageId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilerefResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.microsoft.com/Message" name="GetFilerefResult" type="q17:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPeripheralDegrees">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ImageId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Anterior" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPeripheralDegreesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="urn:schemas-csoitalia-it:phoenix-dt-v10" minOccurs="0" name="GetPeripheralDegreesResult" nillable="true" type="q18:PeripheralDegreesModule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ImageId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.microsoft.com/Message" name="GetImageResult" type="q19:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDerived">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ImageId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Info" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDerivedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.microsoft.com/Message" name="GetDerivedResult" type="q20:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReportId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.microsoft.com/Message" name="GetReportResult" type="q21:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
